@@ -12,9 +12,17 @@ namespace Api.Application.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
+
     {
+        private readonly IUserService _service;
+
+        public UsersController(IUserService service)
+        {
+            _service = service;
+        }
+
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromServices] IUserService service)
+        public async Task<IActionResult> GetAll()
         {
             // aqui está válidando se os parametros da requisição são válidos
             if (!ModelState.IsValid)
@@ -24,7 +32,7 @@ namespace Api.Application.Controllers
 
             try
             {
-                return Ok(await service.GetUsers());
+                return Ok(await _service.GetUsers());
             }
             catch (ArgumentException e)
             {
