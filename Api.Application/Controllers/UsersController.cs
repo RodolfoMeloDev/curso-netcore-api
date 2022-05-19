@@ -23,7 +23,7 @@ namespace Api.Application.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetUsers()
         {
             // aqui está válidando se os parametros da requisição são válidos
             if (!ModelState.IsValid)
@@ -43,7 +43,7 @@ namespace Api.Application.Controllers
 
         [HttpGet]
         [Route("{id}", Name = "GetWithId")]
-        public async Task<IActionResult> Get(Guid id)
+        public async Task<IActionResult> GetUser(Guid id)
         {
             if (!ModelState.IsValid)
             {
@@ -61,7 +61,7 @@ namespace Api.Application.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] UserEntity user)
+        public async Task<IActionResult> InsertUser([FromBody] UserEntity user)
         {
             if (!ModelState.IsValid)
             {
@@ -81,6 +81,31 @@ namespace Api.Application.Controllers
                     return BadRequest();
                 }
             }catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateUser([FromBody] UserEntity user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                var result = await _service.Update(user);
+
+                if (result != null)
+                {
+                    return Ok(result);
+                }
+
+                return BadRequest();
+            }
+            catch (ArgumentException e)
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }
