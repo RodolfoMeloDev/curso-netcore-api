@@ -3,9 +3,6 @@ using Api.Data.Repository;
 using Api.Domain.Entities;
 using Api.Domain.Repository;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Api.Data.Implementations
