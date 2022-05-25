@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace Api.Application
 {

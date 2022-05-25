@@ -46,6 +46,15 @@ namespace Api.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("0efb9fe7-562b-49b6-bf64-783b02583449"),
+                            CreateAt = new DateTime(2022, 5, 25, 0, 15, 2, 599, DateTimeKind.Utc).AddTicks(1861),
+                            Email = "admin@mail.com",
+                            Name = "Administrador"
+                        });
                 });
 #pragma warning restore 612, 618
         }
