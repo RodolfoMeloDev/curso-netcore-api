@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.32407.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Application", "Api.Application\Api.Application.csproj", "{C47CE297-C63A-438C-89DA-9D656115BD6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Domain", "Api.Domain\Api.Domain.csproj", "{21553351-0509-4086-BE7E-06D94728C6BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Domain", "Api.Domain\Api.Domain.csproj", "{21553351-0509-4086-BE7E-06D94728C6BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.CrossCutting", "Api.CrossCutting\Api.CrossCutting.csproj", "{0974003D-8417-4D8E-816E-827762C7A19D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.CrossCutting", "Api.CrossCutting\Api.CrossCutting.csproj", "{0974003D-8417-4D8E-816E-827762C7A19D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Data", "Api.Data\Api.Data.csproj", "{04102542-1D77-4360-8534-21C22BF3C962}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Data", "Api.Data\Api.Data.csproj", "{04102542-1D77-4360-8534-21C22BF3C962}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Service", "Api.Service\Api.Service.csproj", "{9E2DB690-C423-492F-A49C-48E0E89C6409}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Service", "Api.Service\Api.Service.csproj", "{9E2DB690-C423-492F-A49C-48E0E89C6409}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Data.Test", "Api.Data.Test\Api.Data.Test.csproj", "{49CA7686-0153-49B3-84EC-1189112CD5BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9E2DB690-C423-492F-A49C-48E0E89C6409}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E2DB690-C423-492F-A49C-48E0E89C6409}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E2DB690-C423-492F-A49C-48E0E89C6409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49CA7686-0153-49B3-84EC-1189112CD5BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49CA7686-0153-49B3-84EC-1189112CD5BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49CA7686-0153-49B3-84EC-1189112CD5BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49CA7686-0153-49B3-84EC-1189112CD5BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
