@@ -14,6 +14,8 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Design;
+using Api.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api.Application
 {
@@ -147,6 +149,17 @@ namespace Api.Application
             {
                 endpoints.MapControllers();
             });
+
+            if (Environment.GetEnvironmentVariable("MIGRATION").ToLower() == "aplicar")
+            {
+                using (var service = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    using (var context = service.ServiceProvider.GetService<MyContext>())
+                    {
+                        context.Database.Migrate();
+                    }
+                }
+            }
         }
     }
 }

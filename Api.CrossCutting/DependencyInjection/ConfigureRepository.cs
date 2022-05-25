@@ -5,6 +5,7 @@ using Api.Domain.Interfaces;
 using Api.Domain.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Api.CrossCutting.DependencyInjection
 {
@@ -16,9 +17,18 @@ namespace Api.CrossCutting.DependencyInjection
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
             serviceCollection.AddScoped<IUserRepository, UserImplementation>();
 
-            serviceCollection.AddDbContext<MyContext>(
-                options => options.UseNpgsql("Server=localhost;Port=5432;Database=dbAPI;User Id=postgres;Password=admin;Timeout=15;")
+            if (Environment.GetEnvironmentVariable("DATABASE").ToLower() == "postgre")
+            {
+                serviceCollection.AddDbContext<MyContext>(
+                    options => options.UseNpgsql(Environment.GetEnvironmentVariable("DB_CONNECTION"))
                 );
+            }
+            else
+            {
+                serviceCollection.AddDbContext<MyContext>(
+                    options => options.UseSqlServer(Environment.GetEnvironmentVariable("DB_CONNECTION"))
+                );
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using System;
 
 namespace Api.Data.Context
 {
@@ -7,7 +8,7 @@ namespace Api.Data.Context
     {
         public MyContext CreateDbContext(string[] args)
         {
-            var connectionString = "Server=localhost;Port=5432;Database=dbAPI;User Id=postgres;Password=admin;Timeout=15;";
+            var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION");
             var optionsBuilder = new DbContextOptionsBuilder<MyContext>();
 
             optionsBuilder.UseNpgsql(connectionString);
