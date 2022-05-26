@@ -22,7 +22,7 @@ namespace Api.Data.Test
         {
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddDbContext<MyContext>(o =>
-                o.UseNpgsql($"Persist Securiry Info=True;Server=localhost;Port=5432;Database={dataBaseName};User Id=postgres;Password=admin;Timeout=15;"),
+                o.UseNpgsql($"Persist Security Info=True;Server=localhost;Port=5432;Database={dataBaseName};User Id=postgres;Password=admin;Timeout=15;"),
                 ServiceLifetime.Transient
             );
 
@@ -37,7 +37,7 @@ namespace Api.Data.Test
         {
             using (var context = ServiceProvider.GetService<MyContext>())
             {
-                context.Database.EnsureCreated();
+                context.Database.EnsureDeleted();
             }
         }
     }
