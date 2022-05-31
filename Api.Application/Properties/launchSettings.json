@@ -26,7 +26,10 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DB_CONNECTION": "Server=localhost;Port=5432;Database=dbAPI;User Id=postgres;Password=admin;Timeout=15;",
         "DATABASE": "POSTGRE",
-        "MIGRATION": "APLICAR"
+        "MIGRATION": "APLICAR",
+        "Audience": "ExemploAudience",
+        "Issuer": "ExemploIssuer",
+        "Seconds": "14400"
       }
     }
   }
