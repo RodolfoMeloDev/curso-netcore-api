@@ -52,7 +52,12 @@ namespace Api.Application.Controllers
 
             try
             {
-                return Ok(await _service.GetUser(id));
+                var result = await _service.GetUser(id);
+
+                if (result != null)
+                    return Ok(result);
+
+                return NotFound();
             }
             catch (ArgumentException e)
             {
