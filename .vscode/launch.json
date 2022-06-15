@@ -20,7 +20,13 @@
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
             },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "DB_CONNECTION": "Server=localhost;Port=5432;Database=dbAPI;User Id=postgres;Password=admin;Timeout=15;",
+                "DATABASE": "POSTGRE",
+                "MIGRATION": "APLICAR",
+                "Audience": "ExemploAudience",
+                "Issuer": "ExemploIssuer",
+                "Seconds": "14400"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"

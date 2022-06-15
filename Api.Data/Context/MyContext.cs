@@ -1,4 +1,5 @@
 ﻿using Api.Data.Mapping;
+using Api.Data.Seeds;
 using Api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,8 +17,11 @@ namespace Api.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
             modelBuilder.Entity<UserEntity>(new UserMap().Configure);
+
+            modelBuilder.Entity<UfEntity>(new UfMap().Configure);
+            modelBuilder.Entity<MunicipioEntity>(new MunicipioMap().Configure);
+            modelBuilder.Entity<CepEntity>(new CepMap().Configure);
 
             modelBuilder.Entity<UserEntity>().HasData(
                 new UserEntity
@@ -28,10 +32,8 @@ namespace Api.Data.Context
                     CreateAt = DateTime.UtcNow,
                     UpdateAt = null
                 });
+
+            UfSeeds.UFs(modelBuilder);
         }
-
-        public DbSet<UserEntity> Users { get; set; }
-
-
     }
 }

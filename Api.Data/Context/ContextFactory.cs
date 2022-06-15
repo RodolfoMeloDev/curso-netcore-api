@@ -8,7 +8,7 @@ namespace Api.Data.Context
     {
         public MyContext CreateDbContext(string[] args)
         {
-            var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION");
+            var connectionString = "Server=localhost;Port=5432;Database=dbAPI;User Id=postgres;Password=admin;Timeout=15;";
             var optionsBuilder = new DbContextOptionsBuilder<MyContext>();
 
             optionsBuilder.UseNpgsql(connectionString);

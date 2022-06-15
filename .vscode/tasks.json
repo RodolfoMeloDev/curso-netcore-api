@@ -32,10 +32,47 @@
             "args": [
                 "watch",
                 "run",
-                "--project",
-                "${workspaceFolder}/Api.Application/Api.Application.csproj"
+                "${workspaceFolder}/Api.Application/Api.Application.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Data.Testes",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/Api.Data.Test/Api.Data.Test.csproj",
+            ]
+        },
+        {
+            "label": "Service.Testes",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/Api.Service.Test/Api.Service.Test.csproj",
+            ]
+        },
+        {
+            "label": "Application.Testes",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/Api.Application.Test/Api.Application.Test.csproj",
+            ]
+        },
+        {
+            "label": "Integration.Testes",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/Api.Integration.Test/Api.Integration.Test.csproj",
+            ]
         }
     ]
 }
