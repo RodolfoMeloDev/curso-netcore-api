@@ -14,7 +14,7 @@ namespace Api.Data.Seeds
             modelBuilder.Entity<UfEntity>().HasData(
                 new UfEntity()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = new Guid("3288e581-e757-4eb8-9733-cbb70d55a0eb"),
                     Sigla = "AC",
                     Nome = "Acre",
                     CreateAt = DateTime.UtcNow
