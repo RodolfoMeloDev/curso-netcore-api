@@ -8,8 +8,8 @@ namespace Api.Domain.Interfaces.Services.Municipio
     public interface IMunicipioService
     {
         Task<MunicipioDto> Get(Guid id);
-        Task<IEnumerable<MunicipioDtoCompleto>> GetById(Guid id);
-        Task<IEnumerable<MunicipioDtoCompleto>> GetByIBGE(int codIBGE);
+        Task<MunicipioDtoCompleto> GetById(Guid id);
+        Task<MunicipioDtoCompleto> GetByIBGE(int codIBGE);
         Task<IEnumerable<MunicipioDto>> GetAll(int codIBGE);
         Task<MunicipioDtoCreateResult> Post(MunicipioDtoCreate municipio);
         Task<MunicipioDtoUpdateResult> Put(MunicipioDtoUpdate municipio);
