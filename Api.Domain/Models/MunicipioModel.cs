@@ -11,8 +11,8 @@ namespace Api.Domain.Models
             set { _nome = value; }
         }
 
-        private string _codIBGE;
-        public string CodIBGE
+        private int _codIBGE;
+        public int CodIBGE
         {
             get { return _codIBGE; }
             set { _codIBGE = value; }
