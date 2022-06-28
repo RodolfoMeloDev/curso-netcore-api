@@ -33,7 +33,7 @@ namespace Api.Service.Services
             return _mapper.Map<MunicipioDto>(entity);
         }
 
-        public async Task<IEnumerable<MunicipioDto>> GetAll(int codIBGE)
+        public async Task<IEnumerable<MunicipioDto>> GetAll()
         {
             var listaEntity = await _repository.SelectAllAsync();
             return _mapper.Map<IEnumerable<MunicipioDto>>(listaEntity);
