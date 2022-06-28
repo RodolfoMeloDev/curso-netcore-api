@@ -65,7 +65,7 @@ namespace Api.Application.Controllers
             }
         }
 
-        [Authorize("Bearer")]
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> InsertUser([FromBody] UserDtoCreate user)
         {
