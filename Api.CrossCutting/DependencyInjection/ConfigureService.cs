@@ -1,4 +1,7 @@
-﻿using Api.Domain.Interfaces.Services.Login;
+﻿using Api.Domain.Interfaces.Services.Cep;
+using Api.Domain.Interfaces.Services.Login;
+using Api.Domain.Interfaces.Services.Municipio;
+using Api.Domain.Interfaces.Services.UF;
 using Api.Domain.Interfaces.Services.User;
 using Api.Service.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +17,10 @@ namespace Api.CrossCutting.DependencyInjection
             // Singleton = Cria uma unica vez a instancia do service e sempre usará o mesmo na aplicação
             serviceCollection.AddTransient<IUserService, UserService>();
             serviceCollection.AddTransient<ILoginService, LoginService>();
+
+            serviceCollection.AddTransient<IUfService, UfService>();
+            serviceCollection.AddTransient<IMunicipioService, MunicipioServices>();
+            serviceCollection.AddTransient<ICepService, CepService>();
         }
     }
 }
