@@ -63,6 +63,7 @@ namespace Api.Integration.Test
 
         public void Dispose()
         {
+            myContext.Database.EnsureDeleted();
             myContext.Dispose();
             client.Dispose();
         }
