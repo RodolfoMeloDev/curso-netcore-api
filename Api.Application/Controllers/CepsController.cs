@@ -121,5 +121,25 @@ namespace Api.Application.Controllers
             }
         }
 
+        [Authorize("Bearer")]
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteCep(Guid id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                return Ok(await _service.Delete(id));
+            }
+            catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
     }
 }
